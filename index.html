@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<style>
+			body {
+				margin: 0px;
+				background-color: #000000;
+				overflow: hidden;
+			}
+			#menu{
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 1;
+			}
+			input{
+				width: 60px;
+			}
+			table{
+				border-collapse: collapse;
+				background: #eee;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			<table>
+				<tr>
+					<td><input type="text" value="1" id="m11"></td>
+					<td><input type="text" value="0" id="m12"></td>
+					<td><input type="text" value="0" id="m13"></td>
+					<td><input type="text" value="0" id="m14"></td>
+				</tr>
+				<tr>
+					<td><input type="text" value="0" id="m21"></td>
+					<td><input type="text" value="1" id="m22"></td>
+					<td><input type="text" value="0" id="m23"></td>
+					<td><input type="text" value="0" id="m24"></td>
+				</tr>
+				<tr>
+					<td><input type="text" value="0" id="m31"></td>
+					<td><input type="text" value="0" id="m32"></td>
+					<td><input type="text" value="1" id="m33"></td>
+					<td><input type="text" value="0" id="m34"></td>
+				</tr>
+				<tr>
+					<td><input type="text" value="0" id="m41"></td>
+					<td><input type="text" value="0" id="m42"></td>
+					<td><input type="text" value="0" id="m43"></td>
+					<td><input type="text" value="1" id="m44"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>t=<span id="tDisp"></span></td>
+					<td><input type="range" id="tVal" value="1" min="-5" max="5" step="0.1" onchange="updateMatrix(); document.getElementById('tDisp').innerHTML = this.value"></td>
+				</tr>
+				<tr>
+					<td>X-points</td>
+					<td><input type="number" id="pointsX" value="5"></td>
+				</tr>
+				<tr>
+					<td>Y-points</td>
+					<td><input type="number" id="pointsY" value="5"></td>
+				</tr>
+				<tr>
+					<td>Z-points</td>
+					<td><input type="number" id="pointsZ" value="5"></td>
+				</tr>
+				<tr>
+					<td>W-points</td>
+					<td><input type="number" id="pointsW" value="5"></td>
+				</tr>
+				<tr>
+					<td>power</td>
+					<td><input type="number" id="power" value="1" onchange="updateMatrix();"></td>
+				</tr>
+				<tr>
+					<td><button onclick="updateMatrix()" >update</button></td>
+				</tr>
+			</table>
+		</div>
+		<script src="math.min.js" charset="utf-8"></script>
+		<script src="three.min.js" charset="utf-8"></script>
+		<script src="OrbitControls.js" charset="utf-8"></script>
+		<script src="app.js" charset="utf-8"></script>
+	</body>
+</html>
