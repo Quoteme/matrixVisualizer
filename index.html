@@ -22,6 +22,14 @@
 				border-collapse: collapse;
 				background: #eee;
 			}
+			#samplesDiv{
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				background: #ffffff;
+				max-height: 200px;
+				overflow: scroll;
+			}
 		</style>
 	</head>
 	<body>
@@ -80,6 +88,11 @@
 				<tr>
 					<td><button onclick="updateMatrix()" >update</button></td>
 				</tr>
+			</table>
+		</div>
+		<div id="samplesDiv">
+			Samples:<br>
+			<table id="samples">
 			</table>
 		</div>
 		<script src="math.min.js" charset="utf-8"></script>

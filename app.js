@@ -160,4 +160,31 @@ const setMatrix = (mat)=>{
 document.getElementById("menu").onmouseenter = ()=> controls.enabled = false;
 document.getElementById("menu").onmouseleave = ()=> controls.enabled = true;
 
+const loadSamples = ()=>{
+	let e = document.getElementById("samples");
+	fetch("samples.json")
+		.then( resp => resp.json() )
+		.then( data =>{
+			Object.keys(data).forEach( i =>{
+				let tr = document.createElement("tr");
+				let td1 = document.createElement("td");
+					td1.innerHTML = i;
+				let td2 = document.createElement("td");
+				let btn = document.createElement("button");
+					btn.innerHTML = "set";
+					btn.onclick = ()=>{
+						setMatrix(data[i]);
+						updateMatrix();
+					}
+
+				td2.appendChild(btn);
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				e.appendChild(tr);
+			})
+		})
+}
+
+
 loadMatrix();
+loadSamples();
